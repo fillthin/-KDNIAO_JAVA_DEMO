@@ -1,7 +1,9 @@
 # -KDNIAO_JAVA_DEMO
 ## 前期准备工作
 去[快递鸟官网](http://www.kdniao.com/reg)免费注册一个账号，免费获得一个apiKey(接口权限验证需要)，完成实名认证流程，订购一个免费或付费套餐（也可找快递鸟工作人员免费申请付费的接口测试联调）
+
 注：登录快递鸟用户管理后台后获得用户ID和APIKey对应各demo中的EBusinessID、AppKey。
+
 小知识：EBusinessID跟APIKey是什么？EBusinessID跟APIKey您在快递鸟网站注册之后快递鸟分配的密钥（对应官网上的用户ID和API key），用于保证应用来源的可靠性，避免应用伪造，被不法使用。
 
 
