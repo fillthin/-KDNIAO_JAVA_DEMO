@@ -17,16 +17,17 @@ import java.util.Map;
 public class Demo {
 
     public static final String URL = "http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx";
-    public static final String KEY = "3e3b8652-1234-4a68-8c1b-7ec469ef3a19";//APP KEY,请向快递鸟申请
-    public static final String BUSINESS_ID = "11122233";//用户ID，请向快递鸟申请
+    public static final String KEY = "06920cf9-2f55-49b1-b209-4afaceed36ee";//APP KEY,请向快递鸟申请
+    public static final String BUSINESS_ID = "1112222";//用户ID，请向快递鸟申请
     public static final String REQUEST_TYPE = "8001";//请求接口指令（8001查询）
 
     public static void main(String[] args) {
-        System.out.println(new Demo().getRoute("STO", "773061132607004"));
+//        System.out.println(new Demo().getRoute("STO", "773061132607004",""));
+        System.out.println(new Demo().getRoute("SF", "SF1040595620412","5690"));
     }
 
-    public String getRoute(String expressCode, String logisticCode) {
-        LinkedMultiValueMap<String, String> param = parseParam(expressCode, logisticCode);
+    public String getRoute(String expressCode, String logisticCode, String customerName) {
+        LinkedMultiValueMap<String, String> param = parseParam(expressCode, logisticCode,customerName);
         return springSend(param);
     }
 
@@ -44,10 +45,11 @@ public class Demo {
         return response;
     }
 
-    private LinkedMultiValueMap<String, String> parseParam(String expressCode, String logisticCode) {
+    private LinkedMultiValueMap<String, String> parseParam(String expressCode, String logisticCode, String customerName) {
         Map<String, String> map = new LinkedHashMap<>();
         map.put("ShipperCode", expressCode);
         map.put("LogisticCode", logisticCode);
+        map.put("CustomerName", customerName);
         LinkedMultiValueMap<String, String> param = new LinkedMultiValueMap<>();
         String jsonStr = null;
         String DataSign = null;
